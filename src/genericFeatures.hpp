@@ -196,6 +196,21 @@ public:
 		std::string destination
 	);
 	
+	static std::string upperize
+	(
+		std::string s
+	);
+	
+	static std::string lowerize
+	(
+		std::string s
+	);
+	
+	static std::string upperizeAlphaDigit
+	(
+		std::string s
+	);
+	
 protected:
 
 /////////////////////////////////

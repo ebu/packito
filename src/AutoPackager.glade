@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkImage" id="DependencyRemoveDynamicImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="DependencyRemoveIncludeImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="DependencyRemoveStaticImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="EnvironmentRemoveVariableImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="SourceRemoveGladeImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="SourceRemoveImgImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="SourceRemoveOthersImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="SourceRemoveSrcImg">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-about</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-close</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-save-as</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-save</property>
+  </object>
+  <object class="GtkImage" id="image5">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-open</property>
+  </object>
+  <object class="GtkImage" id="image6">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-new</property>
+  </object>
+  <object class="GtkImage" id="image7">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
+  <object class="GtkImage" id="image8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-clear</property>
+  </object>
   <object class="GtkWindow" id="AutoPackager">
     <property name="width_request">620</property>
     <property name="height_request">600</property>
@@ -444,15 +524,117 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="ProjectVersionEntry">
+                          <object class="GtkBox" id="ProjectVersionBox">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="invisible_char">●</property>
-                            <property name="invisible_char_set">True</property>
-                            <property name="placeholder_text">Set the project version...</property>
+                            <property name="can_focus">False</property>
+                            <property name="homogeneous">True</property>
+                            <child>
+                              <object class="GtkLabel" id="ProjectMajorVersionLabel">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Major</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkEntry" id="ProjectMajorVersion">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="has_tooltip">True</property>
+                                <property name="tooltip_markup" translatable="yes">Set the major version of your application</property>
+                                <property name="tooltip_text" translatable="yes">Set the major version of your application</property>
+                                <property name="halign">center</property>
+                                <property name="max_length">3</property>
+                                <property name="invisible_char">●</property>
+                                <property name="width_chars">5</property>
+                                <property name="xalign">0.5</property>
+                                <property name="caps_lock_warning">False</property>
+                                <property name="placeholder_text">X</property>
+                                <property name="input_purpose">number</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="ProjectMinorVersionLabel">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Minor</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkEntry" id="ProjectMinorVersion">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="has_tooltip">True</property>
+                                <property name="tooltip_markup" translatable="yes">Set the minor version of your application</property>
+                                <property name="tooltip_text" translatable="yes">Set the minor version of your application</property>
+                                <property name="halign">center</property>
+                                <property name="max_length">3</property>
+                                <property name="invisible_char">●</property>
+                                <property name="width_chars">5</property>
+                                <property name="xalign">0.5</property>
+                                <property name="invisible_char_set">True</property>
+                                <property name="caps_lock_warning">False</property>
+                                <property name="placeholder_text">Y</property>
+                                <property name="input_purpose">number</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">3</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="ProjectMicroVersionLabel">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Micro</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">4</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkEntry" id="ProjectMicroVersion">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="has_tooltip">True</property>
+                                <property name="tooltip_markup" translatable="yes">Set the micro version of your application</property>
+                                <property name="tooltip_text" translatable="yes">Set the micro version of your application</property>
+                                <property name="halign">center</property>
+                                <property name="max_length">3</property>
+                                <property name="invisible_char">●</property>
+                                <property name="width_chars">5</property>
+                                <property name="xalign">0.5</property>
+                                <property name="invisible_char_set">True</property>
+                                <property name="caps_lock_warning">False</property>
+                                <property name="placeholder_text">Z</property>
+                                <property name="input_purpose">number</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">5</property>
+                              </packing>
+                            </child>
                           </object>
                           <packing>
-                            <property name="expand">True</property>
+                            <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">1</property>
                           </packing>
@@ -1060,12 +1242,12 @@
                         <property name="orientation">vertical</property>
                         <property name="homogeneous">True</property>
                         <child>
-                          <object class="GtkLabel" id="DependencyStaticLabel">
+                          <object class="GtkLabel" id="DependencyILabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="halign">end</property>
                             <property name="valign">start</property>
-                            <property name="label" translatable="yes">Static libraries :</property>
+                            <property name="label" translatable="yes">Header directories :</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1074,12 +1256,12 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="DependencyDynamicLabel">
+                          <object class="GtkLabel" id="DependencyLLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="halign">end</property>
                             <property name="valign">start</property>
-                            <property name="label" translatable="yes">Dynamic libraries :</property>
+                            <property name="label" translatable="yes">Library directories :</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1088,17 +1270,17 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="DependencyIncludeLabel">
+                          <object class="GtkLabel" id="DependencylLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="halign">end</property>
                             <property name="valign">start</property>
-                            <property name="label" translatable="yes">Source libraries :</property>
+                            <property name="label" translatable="yes">Libraries :</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">3</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -1116,7 +1298,7 @@
                         <property name="orientation">vertical</property>
                         <property name="homogeneous">True</property>
                         <child>
-                          <object class="GtkScrolledWindow" id="DependencyScrolledStatic">
+                          <object class="GtkScrolledWindow" id="DependencyScrolledI">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="shadow_type">in</property>
@@ -1131,7 +1313,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="DependencyRemoveStaticButton">
+                          <object class="GtkButton" id="DependencyRemoveIButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
@@ -1150,7 +1332,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkScrolledWindow" id="DependencyScrolledDynamic">
+                          <object class="GtkScrolledWindow" id="DependencyScrolledL">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="shadow_type">in</property>
@@ -1165,7 +1347,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="DependencyRemoveDynamicButton">
+                          <object class="GtkButton" id="DependencyRemoveLButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
@@ -1184,7 +1366,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkScrolledWindow" id="DependencyScrolledInclude">
+                          <object class="GtkScrolledWindow" id="DependencyScrolledl">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="shadow_type">in</property>
@@ -1199,17 +1381,12 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="DependencyRemoveIncludeButton">
+                          <object class="GtkButton" id="DependencyRemovelButton">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <property name="has_tooltip">True</property>
-                            <property name="tooltip_markup" translatable="yes">Remove the selected source libraries from the project...</property>
-                            <property name="tooltip_text" translatable="yes">Remove the selected source libraries from the project...</property>
                             <property name="halign">end</property>
-                            <property name="margin_top">2</property>
-                            <property name="margin_bottom">5</property>
-                            <property name="image">DependencyRemoveIncludeImg</property>
+                            <property name="image">image8</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -1233,14 +1410,14 @@
                         <property name="orientation">vertical</property>
                         <property name="homogeneous">True</property>
                         <child>
-                          <object class="GtkButton" id="DependencyStaticOpenButton">
+                          <object class="GtkButton" id="DependencyIOpenButton">
                             <property name="label" translatable="yes">Select/Add</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
                             <property name="has_tooltip">True</property>
-                            <property name="tooltip_markup" translatable="yes">Select the static libraries...</property>
-                            <property name="tooltip_text" translatable="yes">Select the static libraries...</property>
+                            <property name="tooltip_markup" translatable="yes">Select the include directories...</property>
+                            <property name="tooltip_text" translatable="yes">Select the include directories...</property>
                             <property name="valign">start</property>
                             <property name="margin_top">2</property>
                             <property name="margin_bottom">2</property>
@@ -1252,14 +1429,14 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="DependencyDynamicOpenButton">
+                          <object class="GtkButton" id="DependencyLOpenButton">
                             <property name="label" translatable="yes">Select/Add</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
                             <property name="has_tooltip">True</property>
-                            <property name="tooltip_markup" translatable="yes">Select the dynamic libraries...</property>
-                            <property name="tooltip_text" translatable="yes">Select the dynamic libraries...</property>
+                            <property name="tooltip_markup" translatable="yes">Select the lib directories...</property>
+                            <property name="tooltip_text" translatable="yes">Select the lib directories...</property>
                             <property name="valign">start</property>
                             <property name="margin_top">2</property>
                             <property name="margin_bottom">2</property>
@@ -1271,22 +1448,19 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="DependencyIncludeOpenButton">
-                            <property name="label" translatable="yes">Select/Add</property>
+                          <object class="GtkButton" id="DependencylOpenButton">
+                            <property name="label" translatable="yes">Add</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <property name="has_tooltip">True</property>
-                            <property name="tooltip_markup" translatable="yes">Select the source libraries...</property>
-                            <property name="tooltip_text" translatable="yes">Select the source libraries...</property>
+                            <property name="tooltip_markup" translatable="yes">Set the libraries...</property>
+                            <property name="tooltip_text" translatable="yes">Set the libraries...</property>
                             <property name="valign">start</property>
-                            <property name="margin_top">2</property>
-                            <property name="margin_bottom">2</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">6</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -1346,12 +1520,27 @@
                           <object class="GtkLabel" id="EnvironmentVariableListLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Environment variables :</property>
+                            <property name="halign">end</property>
+                            <property name="label" translatable="yes">Library checks :</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="EnvironmentPKGLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="halign">end</property>
+                            <property name="valign">start</property>
+                            <property name="label" translatable="yes">PKG directories :</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>
@@ -1397,12 +1586,13 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="EnvironmentVariableListValueEntries">
+                          <object class="GtkBox" id="EnvironmentPKGLibsListValueEntries">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="orientation">vertical</property>
                             <child>
                               <object class="GtkScrolledWindow" id="EnvironmentScrolledVariable">
+                                <property name="height_request">150</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="shadow_type">in</property>
@@ -1440,6 +1630,52 @@
                             <property name="expand">True</property>
                             <property name="fill">True</property>
                             <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="EnvironmentPKGListEntries">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <object class="GtkScrolledWindow" id="EnvironmentScrolledPKG">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="shadow_type">in</property>
+                                <child>
+                                  <placeholder/>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkButton" id="EnvironmentRemovePKGButton">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="has_tooltip">True</property>
+                                <property name="tooltip_markup" translatable="yes">Remove the selected source libraries from the project...</property>
+                                <property name="tooltip_text" translatable="yes">Remove the selected source libraries from the project...</property>
+                                <property name="halign">end</property>
+                                <property name="margin_top">2</property>
+                                <property name="margin_bottom">5</property>
+                                <property name="image">image7</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>
@@ -1502,6 +1738,25 @@
                             <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="EnvironmentPKGOpenButton">
+                            <property name="label" translatable="yes">Select/Add</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_markup" translatable="yes">Select the PKG directories ...</property>
+                            <property name="tooltip_text" translatable="yes">Select the PKG directories ...</property>
+                            <property name="valign">start</property>
+                            <property name="margin_top">2</property>
+                            <property name="margin_bottom">2</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>
@@ -1868,75 +2123,5 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkImage" id="DependencyRemoveDynamicImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="DependencyRemoveIncludeImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="DependencyRemoveStaticImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="EnvironmentRemoveVariableImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="SourceRemoveGladeImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="SourceRemoveImgImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="SourceRemoveOthersImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="SourceRemoveSrcImg">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-clear</property>
-  </object>
-  <object class="GtkImage" id="image1">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-about</property>
-  </object>
-  <object class="GtkImage" id="image2">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-close</property>
-  </object>
-  <object class="GtkImage" id="image3">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-save-as</property>
-  </object>
-  <object class="GtkImage" id="image4">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-save</property>
-  </object>
-  <object class="GtkImage" id="image5">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-open</property>
-  </object>
-  <object class="GtkImage" id="image6">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="stock">gtk-new</property>
   </object>
 </interface>

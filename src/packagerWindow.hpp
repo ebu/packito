@@ -86,9 +86,10 @@ class PackagerWindow : public Gtk::Window
 		Gtk::ScrolledWindow * SourceScrolledImg; /*!< SourceScrolledImg This scrolled window ... */
 		Gtk::ScrolledWindow * SourceScrolledGlade; /*!< SourceScrolledGlade This scrolled window ... */
 		Gtk::ScrolledWindow * SourceScrolledOthers; /*!< SourceScrolledOthers This scrolled window ... */
-		Gtk::ScrolledWindow * DependencyScrolledStatic; /*!< DependencyScrolledStatic This scrolled window ... */
-		Gtk::ScrolledWindow * DependencyScrolledDynamic; /*!< DependencyScrolledDynamic This scrolled window ... */
-		Gtk::ScrolledWindow * DependencyScrolledInclude; /*!< DependencyScrolledInclude This scrolled window ... */
+		Gtk::ScrolledWindow * DependencyScrolledI; /*!< DependencyScrolledI This scrolled window ... */
+		Gtk::ScrolledWindow * DependencyScrolledL; /*!< DependencyScrolledL This scrolled window ... */
+		Gtk::ScrolledWindow * DependencyScrolledl; /*!< DependencyScrolledl This scrolled window ... */
+		Gtk::ScrolledWindow * EnvironmentScrolledPKG; /*!< EnvironmentScrolledPKG This scrolled window ... */
 		Gtk::ScrolledWindow * EnvironmentScrolledVariable; /*!< EnvironmentScrolledVariable This scrolled window ... */
 
 		// buttons
@@ -105,12 +106,14 @@ class PackagerWindow : public Gtk::Window
 		Gtk::Button * SourceRemoveOthersButton; /*!< SourceRemoveOthersButton This button ...*/
 		Gtk::Button * SourcePreviousButton; /*!< SourcePreviousButton This button ...*/
 		Gtk::Button * SourceNextButton; /*!< SourceNextButton This button ...*/
-		Gtk::Button * DependencyStaticOpenButton; /*!< DependencyStaticOpenButton This button ...*/
-		Gtk::Button * DependencyDynamicOpenButton; /*!< DependencyDynamicOpenButton This button ...*/
-		Gtk::Button * DependencyIncludeOpenButton; /*!< DependencyIncludeOpenButton This button ...*/
-		Gtk::Button * DependencyRemoveStaticButton; /*!< DependencyRemoveStaticButton This button ...*/
-		Gtk::Button * DependencyRemoveDynamicButton; /*!< DependencyRemoveDynamicButton This button ...*/
-		Gtk::Button * DependencyRemoveIncludeButton; /*!< DependencyRemoveIncludeButton This button ...*/
+		Gtk::Button * DependencyIOpenButton; /*!< DependencyIOpenButton This button ...*/
+		Gtk::Button * DependencyLOpenButton; /*!< DependencyLOpenButton This button ...*/
+		Gtk::Button * DependencylOpenButton; /*!< DependencylOpenButton This button ...*/
+		Gtk::Button * EnvironmentPKGOpenButton; /*!< EnvironmentPKGOpenButton This button ...*/
+		Gtk::Button * DependencyRemoveIButton; /*!< DependencyRemoveIButton This button ...*/
+		Gtk::Button * DependencyRemoveLButton; /*!< DependencyRemoveLButton This button ...*/
+		Gtk::Button * DependencyRemovelButton; /*!< DependencyRemovelButton This button ...*/
+		Gtk::Button * EnvironmentRemovePKGButton; /*!< DependencyRemoveIncludeButton This button ...*/
 		Gtk::Button * DependencyPreviousButton; /*!< DependencyPreviousButton This button ...*/
 		Gtk::Button * DependencyNextButton; /*!< DependencyNextButton This button ...*/
 		Gtk::Button * EnvironmentVariableOpenButton; /*!< EnvironmentVariableOpenButton This button ...*/
@@ -122,8 +125,8 @@ class PackagerWindow : public Gtk::Window
 		Gtk::RadioButton * ProjectLanguageC; /*!< ProjectLanguageC This radiobutton ...*/
 		Gtk::RadioButton * ProjectLanguageCPP; /*!< ProjectLanguageCPP This radiobutton ...*/
 		
+		// entry
 		Gtk::Entry * ProjectNameEntry; /*!< ProjectNameEntry This entry ...*/
-		Gtk::Entry * ProjectVersionEntry; /*!< ProjectVersionEntry This entry ...*/
 		Gtk::Entry * ProjectTarballEntry; /*!< ProjectTarballEntry This entry ...*/
 		Gtk::Entry * ProjectURLEntry; /*!< ProjectURLEntry This entry ...*/
 		Gtk::Entry * ProjectBugReportEntry; /*!< ProjectBugReportEntry This entry ...*/
@@ -131,6 +134,9 @@ class PackagerWindow : public Gtk::Window
 		Gtk::Entry * ProjectOutputEntry; /*!< ProjectOutputEntry This entry ...*/
 		Gtk::Entry * EnvironmentCompilerFlagsEntry; /*!< EnvironmentCompilerFlagsEntry This entry ...*/
 		Gtk::Entry * EnvironmentArgumentsEntry; /*!< EnvironmentArgumentsEntry This entry ...*/
+		Gtk::Entry * ProjectMajorVersion; /*!< ProjectMajorVersion This entry ...*/
+		Gtk::Entry * ProjectMinorVersion; /*!< ProjectMinorVersion This entry ...*/
+		Gtk::Entry * ProjectMicroVersion; /*!< ProjectMicroVersion This entry ...*/
 		
 		// label
 		Gtk::Label * EmptyTitleLabel; /*!< EmptyTitleLabel This label ...*/
@@ -167,23 +173,26 @@ class PackagerWindow : public Gtk::Window
 		Gtk::TreeView * imageTreeview;
 		Gtk::TreeView * gladeTreeview;
 		Gtk::TreeView * othersTreeview;
-		Gtk::TreeView * staticTreeview;
-		Gtk::TreeView * dynamicTreeview;
-		Gtk::TreeView * includeTreeview;
+		Gtk::TreeView * ITreeview;
+		Gtk::TreeView * LTreeview;
+		Gtk::TreeView * lTreeview;
+		Gtk::TreeView * PKGTreeview;
 		Glib::RefPtr<Gtk::ListStore> sourceStore;
 		Glib::RefPtr<Gtk::ListStore> imageStore;
 		Glib::RefPtr<Gtk::ListStore> gladeStore;
 		Glib::RefPtr<Gtk::ListStore> othersStore;
-		Glib::RefPtr<Gtk::ListStore> staticStore;
-		Glib::RefPtr<Gtk::ListStore> dynamicStore;
-		Glib::RefPtr<Gtk::ListStore> includeStore;
+		Glib::RefPtr<Gtk::ListStore> IStore;
+		Glib::RefPtr<Gtk::ListStore> LStore;
+		Glib::RefPtr<Gtk::ListStore> lStore;
+		Glib::RefPtr<Gtk::ListStore> PKGStore;
 		Glib::RefPtr<Gtk::TreeSelection> sourceSelection;
 		Glib::RefPtr<Gtk::TreeSelection> imageSelection;
 		Glib::RefPtr<Gtk::TreeSelection> gladeSelection;
 		Glib::RefPtr<Gtk::TreeSelection> othersSelection;
-		Glib::RefPtr<Gtk::TreeSelection> staticSelection;
-		Glib::RefPtr<Gtk::TreeSelection> dynamicSelection;
-		Glib::RefPtr<Gtk::TreeSelection> includeSelection;
+		Glib::RefPtr<Gtk::TreeSelection> ISelection;
+		Glib::RefPtr<Gtk::TreeSelection> LSelection;
+		Glib::RefPtr<Gtk::TreeSelection> lSelection;
+		Glib::RefPtr<Gtk::TreeSelection> PKGSelection;
 		
 	  	
 		class VarEnvColumns : public Gtk::TreeModel::ColumnRecord 
@@ -296,7 +305,8 @@ class PackagerWindow : public Gtk::Window
 		(
 			std::string title,
 			unsigned int mime,
-			Glib::RefPtr<Gtk::ListStore> store
+			Glib::RefPtr<Gtk::ListStore> store,
+			Gtk::FileChooserAction action
 		);
 		
 		void on_add_env_var_clicked
@@ -305,16 +315,17 @@ class PackagerWindow : public Gtk::Window
 			Glib::RefPtr<Gtk::ListStore> store
 		);
 		
-		void on_remove_clicked
+		void on_add_static_clicked
 		(
-			Glib::RefPtr<Gtk::TreeSelection> selection
-		);
-
-		void selected_row_callback
-		(
-			const Gtk::TreeModel::iterator& iter
+			std::string title,
+			Glib::RefPtr<Gtk::ListStore> store
 		);
 		
+		void on_remove_clicked
+		(
+			Glib::RefPtr<Gtk::TreeSelection> selection,
+			Glib::RefPtr<Gtk::ListStore> store
+		);
 		void on_doxygen_open
 		(
 			void
@@ -331,6 +342,11 @@ class PackagerWindow : public Gtk::Window
 		);
 		
 		void on_varenv_assistant_apply
+		(
+			Glib::RefPtr<Gtk::ListStore> store
+		);
+		
+		void on_static_assistant_apply
 		(
 			Glib::RefPtr<Gtk::ListStore> store
 		);

@@ -1,8 +1,17 @@
-> sh autogen.sh
-> ./configure
-> make
+>> sh autogen.sh
+>> ./configure
+>> make
+
+or
+
+>> sh autogen.sh
+>> ./configure PKG_CONFIG_PATH=/Path/to/pkgconfig
+>> make
 
 or quicker from src directory
-c++ -std=c++11 *.cpp -o demo-linux `pkg-config --libs --cflags gtkmm-3.0 gdkmm-3.0` -W -Wall
+
+>> c++ -std=c++11 *.cpp -o demo-linux `pkg-config --libs --cflags gtkmm-3.0 gdkmm-3.0` -W -Wall
+
 or
-g++ -std=c++11 *.cpp -o demo-linux `pkg-config --libs --cflags gtkmm-3.0 gdkmm-3.0` -W -Wall
+
+>> g++ -std=c++11 *.cpp -o demo-linux `pkg-config --libs --cflags gtkmm-3.0 gdkmm-3.0` -W -Wall

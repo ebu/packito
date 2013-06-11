@@ -1,0 +1,16 @@
+#ifndef PACKITO_VERSION_H
+#define PACKITO_VERSION_H
+
+#define PACKITO_VERSION_MAJOR 1
+#define PACKITO_VERSION_MINOR 0
+#define PACKITO_VERSION_MICRO 4
+
+#define PACKITO_BUGREPORT "dossantos@ebu.ch"
+#define PACKITO_TARNAME "packitotar"
+#define PACKITO_URL "http://www.packito.com"
+
+#define PACKITO_VERSION (PACKITO_VERSION_MAJOR << 16 | PACKITO_VERSION_MINOR << 8 | PACKITO_VERSION_MICRO)
+
+#define PACKITO_LIBRARY_NAME "packito"
+
+#endif
